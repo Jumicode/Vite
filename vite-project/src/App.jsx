@@ -1,13 +1,11 @@
-import './App.css'
 import Country from './components/Country'
-import CountryMain from './components/CountryMain'
+
 function App() {
   
   return (
     <div>
-    
-<Country></Country>
-<CountryMain></CountryMain>
+    <Country></Country>
+
     </div>
   )
 }

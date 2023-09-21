@@ -1,7 +1,9 @@
-import {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import axios from 'axios'
+import { BrowserRouter as Router ,Route,Routes} from "react-router-dom";
 import {setCountry} from '../features/country/countrySlice'
+import CountryMain from './CountryMain';
+import CountryDetail from './CountryDetail';
 
 
 
@@ -26,6 +28,19 @@ axios.get(res)
 function Country(){
 
     GetCountry();
+
+    return(
+       
+<Router>
+
+<Routes>
+
+<Route exact path='/' element={<CountryMain></CountryMain>}></Route>
+<Route path='/country/:countryName' element={<CountryDetail></CountryDetail>}></Route>
+</Routes>
+
+</Router>
+    )
    
    
 }
