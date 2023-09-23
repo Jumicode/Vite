@@ -1,12 +1,17 @@
+import { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import RegionFilter from './RegionFilter';
 
 function CountryMain() {
   const { country } = useSelector((state) => state.country);
+  const [selectedRegion, setSelectedRegion] = useState('');
 
   return (
     <div>
-      {country.map((Country, key) => (
+      <RegionFilter selectedRegion={selectedRegion} onRegionChange={setSelectedRegion} />
+
+      {country.filter((Country) => Country.region === selectedRegion || selectedRegion === '').map((Country, key) => (
         <div key={key}>
           <Link to={`/country/${encodeURIComponent(Country.name.common)}`}>
             <img src={`${Country.flags.png}`} alt={Country.name.common} />
@@ -21,4 +26,4 @@ function CountryMain() {
   );
 }
 
-export default CountryMain;
+export default CountryMain

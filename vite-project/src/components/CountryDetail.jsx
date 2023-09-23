@@ -5,13 +5,13 @@ function CountryDetail() {
   const { countryName } = useParams();
   const { country } = useSelector((state) => state.country);
 
-  // Encuentra el país correspondiente en la lista de países
+
   const selectedCountry = country.find(
     (Country) => encodeURIComponent(Country.name.common) === countryName
   );
 
   if (!selectedCountry) {
-    return <div>País no encontrado</div>;
+    return <div></div>;
   }
 
   return (
