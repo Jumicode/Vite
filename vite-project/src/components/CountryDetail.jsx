@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useParams,Link } from 'react-router-dom';
 
 function CountryDetail() {
   const { countryName } = useParams();
@@ -16,6 +16,9 @@ function CountryDetail() {
 
   return (
     <div>
+      <Link to="/">
+        <button> Back </button>
+      </Link>
        <img src={`${selectedCountry.flags.png}`} alt={selectedCountry.name.common} />
 
       <h1>{selectedCountry.name.common}</h1>
