@@ -18,6 +18,7 @@ axios.get(res)
 .then((res) =>{
     console.log(res.data);
     dispatch(setCountry(res.data));
+   
 })
 .catch((error)=>{
     alert(`Error: ${error}`);
@@ -36,7 +37,8 @@ function Country(){
 <Routes>
 
 <Route exact path='/' element={<CountryMain></CountryMain>}></Route>
-<Route path='/country/:countryName' element={<CountryDetail></CountryDetail>}></Route>
+<Route path='/country/:cca2' element={<CountryDetail></CountryDetail>}></Route>
+
 </Routes>
 
 </Router>
