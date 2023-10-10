@@ -16,7 +16,7 @@ const res = 'https://restcountries.com/v3.1/all';
 
 axios.get(res)
 .then((res) =>{
-    console.log(res.data);
+    //console.log(res.data);
     dispatch(setCountry(res.data));
    
 })

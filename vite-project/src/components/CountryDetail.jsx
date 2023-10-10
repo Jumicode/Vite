@@ -10,7 +10,7 @@ function CountryDetail() {
 
 
   if (!selectedCountry) {
-    return <div>Pais no ecnontrado</div>;
+    return <div>Country not found</div>;
   }
 
   return (
@@ -53,9 +53,10 @@ function CountryDetail() {
       <h3>Subregion: {selectedCountry.subregion}</h3>
       <h3>Capital: {selectedCountry.capital}</h3>
       <h3>Top level Domain : {selectedCountry.tld}</h3>
-      <h3>Border Country: {selectedCountry.borders}</h3>
+      <h3>Border Country: {selectedCountry.borders ? selectedCountry.borders : <p>This country does not have any border countries.</p>}</h3>
     </div>
   );
 }
 
 export default CountryDetail;
+
